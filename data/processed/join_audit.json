@@ -1,0 +1,28 @@
+{
+  "locations": {
+    "chiang_mai": {
+      "air_hourly_rows": 26304,
+      "weather_hourly_rows": 26304,
+      "air_daily_rows": 1096,
+      "weather_daily_rows": 1096,
+      "joined_daily_rows": 1096,
+      "air_dates_not_in_weather": 0,
+      "weather_dates_not_in_air": 0
+    },
+    "chiang_rai": {
+      "air_hourly_rows": 26304,
+      "weather_hourly_rows": 26304,
+      "air_daily_rows": 1096,
+      "weather_daily_rows": 1096,
+      "joined_daily_rows": 1096,
+      "air_dates_not_in_weather": 0,
+      "weather_dates_not_in_air": 0
+    }
+  },
+  "join_method": "inner join on date within each location",
+  "combined_rows_before_model_dropna": 2192,
+  "model_rows_after_dropna": 2176,
+  "target_definition": "next calendar day's daily mean PM2.5",
+  "standard_ug_m3": 37.5,
+  "timezone": "Asia/Bangkok"
+}

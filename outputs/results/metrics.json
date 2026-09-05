@@ -1,0 +1,134 @@
+{
+  "target": "tomorrow_exceeds_37_5",
+  "target_definition": "Whether tomorrow's daily mean PM2.5 exceeds 37.5 \u00b5g/m\u00b3",
+  "prediction_moment": "end of today's daily observation",
+  "split_strategy": "Chronological split: final 20% of ordered calendar dates as test",
+  "cv_strategy": "TimeSeriesSplit with 5 splits",
+  "train_rows": 1740,
+  "test_rows": 436,
+  "train_start": "2023-01-08 00:00:00",
+  "train_end": "2025-05-26 00:00:00",
+  "test_start": "2025-05-27 00:00:00",
+  "test_end": "2025-12-30 00:00:00",
+  "split_date": "2025-05-27",
+  "train_class_0": 1558,
+  "train_class_1": 182,
+  "test_class_0": 436,
+  "test_class_1": 0,
+  "test_has_positive_class": false,
+  "baseline_majority_class": 0,
+  "baseline": {
+    "accuracy": 1.0,
+    "balanced_accuracy": 1.0,
+    "precision_positive": 0.0,
+    "recall_positive": 0.0,
+    "f1_positive": 0.0,
+    "roc_auc": NaN
+  },
+  "model": {
+    "accuracy": 0.9977064220183486,
+    "balanced_accuracy": 0.9977064220183486,
+    "precision_positive": 0.0,
+    "recall_positive": 0.0,
+    "f1_positive": 0.0,
+    "roc_auc": NaN
+  },
+  "cv_mean": {
+    "accuracy": 0.913103448275862,
+    "balanced_accuracy": 0.8450087178186422,
+    "precision": 0.3481817001103968,
+    "recall": 0.5820512820512821,
+    "f1": 0.41139180562077265
+  },
+  "cv_folds": [
+    {
+      "fold": 1,
+      "train_rows": 290,
+      "validation_rows": 290,
+      "train_positive": 84,
+      "validation_positive": 0
+    },
+    {
+      "fold": 2,
+      "train_rows": 580,
+      "validation_rows": 290,
+      "train_positive": 84,
+      "validation_positive": 10
+    },
+    {
+      "fold": 3,
+      "train_rows": 870,
+      "validation_rows": 290,
+      "train_positive": 94,
+      "validation_positive": 20
+    },
+    {
+      "fold": 4,
+      "train_rows": 1160,
+      "validation_rows": 290,
+      "train_positive": 114,
+      "validation_positive": 3
+    },
+    {
+      "fold": 5,
+      "train_rows": 1450,
+      "validation_rows": 290,
+      "train_positive": 117,
+      "validation_positive": 65
+    }
+  ],
+  "classification_report": {
+    "<=37.5": {
+      "precision": 1.0,
+      "recall": 0.9977064220183486,
+      "f1-score": 0.9988518943742825,
+      "support": 436.0
+    },
+    ">37.5": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 0.0
+    },
+    "accuracy": 0.9977064220183486,
+    "macro avg": {
+      "precision": 0.5,
+      "recall": 0.4988532110091743,
+      "f1-score": 0.49942594718714123,
+      "support": 436.0
+    },
+    "weighted avg": {
+      "precision": 1.0,
+      "recall": 0.9977064220183486,
+      "f1-score": 0.9988518943742825,
+      "support": 436.0
+    }
+  },
+  "features": [
+    "location",
+    "pm25_today",
+    "pm25_lag1",
+    "pm25_lag7",
+    "pm25_7d_mean",
+    "pm10",
+    "dust",
+    "temperature_2m",
+    "relative_humidity_2m",
+    "wind_speed_10m",
+    "precipitation",
+    "surface_pressure",
+    "day_of_week",
+    "month"
+  ],
+  "leakage_check": {
+    "pm25_tomorrow_used_as_feature": false
+  },
+  "sorting": {
+    "sorted_before_split": true,
+    "sort_columns": [
+      "date",
+      "location"
+    ]
+  },
+  "evaluation_limitation": "The final chronological test period contains no positive high-PM2.5 cases. Therefore, positive-class test precision, recall, and F1 are not informative for this test period. The split was retained because the assignment requires the later portion of time-ordered data to be used as the test set."
+}

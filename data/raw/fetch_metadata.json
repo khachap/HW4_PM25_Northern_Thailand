@@ -1,0 +1,81 @@
+{
+  "retrieved_at_utc": "2026-08-31T08:44:15.618054+00:00",
+  "start_date": "2023-01-01",
+  "end_date": "2025-12-31",
+  "timezone": "Asia/Bangkok",
+  "locations": {
+    "chiang_mai": {
+      "latitude": 18.7883,
+      "longitude": 98.9853
+    },
+    "chiang_rai": {
+      "latitude": 19.9105,
+      "longitude": 99.8406
+    }
+  },
+  "requests": [
+    {
+      "source": "Open-Meteo Air Quality API",
+      "endpoint": "https://air-quality-api.open-meteo.com/v1/air-quality",
+      "location": "chiang_mai",
+      "parameters": {
+        "latitude": 18.7883,
+        "longitude": 98.9853,
+        "hourly": "pm2_5,pm10,carbon_monoxide,dust",
+        "start_date": "2023-01-01",
+        "end_date": "2025-12-31",
+        "timezone": "Asia/Bangkok"
+      },
+      "rows": 26304
+    },
+    {
+      "source": "Open-Meteo Historical Weather API",
+      "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+      "location": "chiang_mai",
+      "parameters": {
+        "latitude": 18.7883,
+        "longitude": 98.9853,
+        "hourly": "temperature_2m,relative_humidity_2m,wind_speed_10m,wind_direction_10m,precipitation,surface_pressure",
+        "start_date": "2023-01-01",
+        "end_date": "2025-12-31",
+        "timezone": "Asia/Bangkok"
+      },
+      "rows": 26304
+    },
+    {
+      "source": "Open-Meteo Air Quality API",
+      "endpoint": "https://air-quality-api.open-meteo.com/v1/air-quality",
+      "location": "chiang_rai",
+      "parameters": {
+        "latitude": 19.9105,
+        "longitude": 99.8406,
+        "hourly": "pm2_5,pm10,carbon_monoxide,dust",
+        "start_date": "2023-01-01",
+        "end_date": "2025-12-31",
+        "timezone": "Asia/Bangkok"
+      },
+      "rows": 26304
+    },
+    {
+      "source": "Open-Meteo Historical Weather API",
+      "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+      "location": "chiang_rai",
+      "parameters": {
+        "latitude": 19.9105,
+        "longitude": 99.8406,
+        "hourly": "temperature_2m,relative_humidity_2m,wind_speed_10m,wind_direction_10m,precipitation,surface_pressure",
+        "start_date": "2023-01-01",
+        "end_date": "2025-12-31",
+        "timezone": "Asia/Bangkok"
+      },
+      "rows": 26304
+    },
+    {
+      "source": "Air4Thai / Pollution Control Department",
+      "endpoint": "https://air4thai.pcd.go.th/services/getNewAQI_JSON.php",
+      "location": "all stations",
+      "parameters": {},
+      "rows": 173
+    }
+  ]
+}
